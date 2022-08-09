@@ -15,6 +15,7 @@
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
+                        <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -31,7 +32,6 @@
             <div class="col-2">
                 <asp:Button ID="BtnAñadir" runat="server" Text="Agregar Usuario" OnClick="BtnAñadir_Click" />
                 <asp:Button ID="BtnActualizar" runat="server" Text="Actualizar usuario" />
-                <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar Usuario" OnClick="BtnEliminar_Click" />
             </div>
         </div>
         <div class="row mt-3">

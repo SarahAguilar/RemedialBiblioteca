@@ -25,14 +25,19 @@ namespace WebPresentacion
 
                 bl = (LN)Session["bl"];
             }
-            mostrarPub()
+            mostrarPub();
         }
 
         public void mostrarPub()
         {
             string msj = "";
-            GridView1.DataSource = bl.InfoConsulta(ref msj);
-            GridView1.DataBind();
+            //GridView1.DataSource = bl.InfoConsulta(ref msj);
+            //GridView1.DataBind();
+        }
+
+        protected void ButtonAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

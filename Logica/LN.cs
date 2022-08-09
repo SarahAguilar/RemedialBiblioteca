@@ -54,7 +54,7 @@ namespace Logica
 
         public Boolean BorrarUsuario(string id)
         {
-            string query = "DELETE FROM usuario where id_usuario = " + id;
+            string query = "DELETE FROM usuarios where id_usuario = " + id;
             string msj = "";
             Boolean salida = false;
             List<SqlParameter> listaP = new List<SqlParameter>();

@@ -36,13 +36,11 @@ namespace WebPresentacion
 
             BtnActualizar.Visible = false;
             BtnAñadir.Visible = false;
-            BtnEliminar.Visible = false;
         }
         public void Visibles()
         {
             BtnActualizar.Visible = true;
             BtnAñadir.Visible = true;
-            BtnEliminar.Visible = true;
         }
 
         public void mostrarUsu()
@@ -60,18 +58,10 @@ namespace WebPresentacion
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["id_usuario"] = GridView1.SelectedRow.Cells[1].Text; //Se guarda el id del profe en una variable de sesion
-            Response.Redirect("WebFormConsultas.aspx"); //Redireccionamos
-        }
+            Session["id_usuario"] = GridView1.SelectedRow.Cells[2].Text; //Se guarda el id del profe en una variable de sesion
+            Response.Redirect("WebFormAcutalizaUser.aspx"); //Redireccionamos
 
-        protected void BtnAñadir_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("WebFormAñadirUsu.aspx"); //Redireccionamos
-        }
-
-        protected void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            idUsu = GridView1.SelectedRow.Cells[1].Text;
+            idUsu = GridView1.SelectedRow.Cells[2].Text;
             string resp = "";
             Boolean recibe = false;
             recibe = bl.BorrarUsuario(idUsu);
@@ -84,6 +74,28 @@ namespace WebPresentacion
             {
                 TextBoxStatus.Text = "ERROR! No se pudo eliminar";
             }
+        }
+
+        protected void BtnAñadir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WebFormAñadirUsu.aspx"); //Redireccionamos
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            //idUsu = GridView1.SelectedRow.Cells[1].Text;
+            //string resp = "";
+            //Boolean recibe = false;
+            //recibe = bl.BorrarUsuario(idUsu);
+
+            //if (recibe)
+            //{
+            //    TextBoxStatus.Text = "Se elimino exitosamente";
+            //}
+            //else
+            //{
+            //    TextBoxStatus.Text = "ERROR! No se pudo eliminar";
+            //}
         }
     }
 }
